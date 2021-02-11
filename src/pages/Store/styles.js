@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
   flex-flow: wrap;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Product = styled.div`
@@ -57,4 +63,17 @@ export const CartButton = styled.button`
   outline: 0;
 `;
 
-export const ModalItem = styled.div``;
+export const ModalItem = styled.div`
+  margin: 16px 0;
+  input {
+    height: 52px;
+    width: 94px;
+    padding: 16px;
+  }
+  button {
+    height: 52px;
+    width: 50px;
+    background: var(--white);
+    border: 1px solid var(--primary);
+  }
+`;

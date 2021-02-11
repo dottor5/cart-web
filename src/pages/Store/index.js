@@ -66,8 +66,6 @@ function Store() {
             content: {
               top: "50%",
               left: "50%",
-              right: "auto",
-              bottom: "auto",
               marginRight: "-50%",
               transform: "translate(-50%, -50%)",
               background: "#F0F0F5",
@@ -87,15 +85,11 @@ function Store() {
               return check.quantity < 1 ? (
                 cart.splice(cart.indexOf(item), 1)
               ) : (
-                <ModalItem>
+                <ModalItem key={item._id}>
                   <p>{item.name}</p>
                   <h3>{formatValue(item.price)}</h3>
                   <button onClick={() => handleRemoveFromCart(item)}>-</button>
-                  <input
-                    type="text"
-                    defaultValue={item.quantity}
-                    value={item.quantity}
-                  />
+                  <input type="text" value={item.quantity} readOnly />
                   <button onClick={() => handleAddToCart(item)}>+</button>
                 </ModalItem>
               );
@@ -116,7 +110,7 @@ function Store() {
               <p>{product.name}</p>
               <h3>{formatValue(product.price)}</h3>
               <button onClick={() => handleAddToCart(product)}>
-                Adcionar ao carrinho
+                Adicionar ao carrinho
               </button>
             </Product>
           ))}
