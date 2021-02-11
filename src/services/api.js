@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.BASE_URL || "http://localhost:3333",
+  baseURL: "https://shielded-reaches-13251.herokuapp.com/",
 });
 
 export default api;
