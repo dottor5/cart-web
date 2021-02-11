@@ -70,7 +70,7 @@ function Store() {
               transform: "translate(-50%, -50%)",
               background: "#F0F0F5",
               color: "#000000",
-              width: "800px",
+              width: "60%",
               border: "none",
             },
             overlay: {
